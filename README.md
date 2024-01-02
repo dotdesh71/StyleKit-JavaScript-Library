@@ -29,10 +29,6 @@ StyleKit is a feature-rich JavaScript library designed to simplify and enhance w
     });
     ```
 
-## Examples
-
-Check out the [examples](examples/) directory for more usage examples and demonstrations.
-
 ## Contributing
 
 Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
