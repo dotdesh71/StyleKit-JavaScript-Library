@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleKit Example</title>
+  <!-- Link to the StyleKit library -->
+  <script src="stylekit.js"></script>
+  <style>
+    /* Define a sample CSS animation */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    /* Add some basic styles for demonstration */
+    .highlight {
+      background-color: yellow;
+    }
+
+    .active {
+      border: 2px solid green;
+    }
+  </style>
+</head>
+<body>
+
+<div id="myElement" style="width: 200px; height: 200px; background-color: blue;">Example</div>
+
+<script>
+  // Example usage of the advanced StyleKit library
+  var myElement = document.getElementById('myElement');
+
+  // Chained operations with improved animation and transition handling
+  StyleKit.addClass(myElement, 'highlight')
+    .wait(500)
+    .setStyles(myElement, { backgroundColor: 'red', color: 'white' })
+    .animate(myElement, 'fadeIn', 1000, () => console.log('Element faded in!'))
+    .wait(2000)
+    .removeClass(myElement, 'highlight')
+    .onTransitionEnd(myElement, () => console.log('Transition ended!'));
+
+  // Fluent API for adding classes and handling click event
+  StyleKit.addClass(myElement, 'active').onTransitionEnd(myElement, () => {
+    console.log('Element transition ended!');
+  });
+
+  // Animated fadeIn with custom duration
+  StyleKit.animate(myElement, 'fadeIn', 2000, () => {
+    console.log('Element faded in with custom duration!');
+  });
+</script>
+
+</body>
+</html>
